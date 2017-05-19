@@ -130,7 +130,12 @@ namespace CS_StatMaker
             new Proficiency("Sleight of Hand",new Stats(){Dexterity = 1},ProficiencyRating.No),
             new Proficiency("Stealth",new Stats(){Dexterity = 1},ProficiencyRating.No),
             new Proficiency("Survival",new Stats(){Wisdom = 1},ProficiencyRating.No)
-        };        
+        };
+
+        public List<Proficiency> ToolProficiencies { get; } = new List<Proficiency>
+        {
+            new Proficiency("Thieves' Tools",new Stats(){Dexterity = 1},ProficiencyRating.No)
+        };
     }
 }
             
