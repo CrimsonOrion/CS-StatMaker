@@ -119,7 +119,7 @@ namespace CS_StatMaker
             raceBox.SelectedIndex = -1;
         }
 
-        public static void SelectRace(ComboBox raceBox, Label str, Label dex, Label con, Label intel, Label wis, Label cha)
+        public static void SelectRace(ComboBox raceBox, Label str, Label dex, Label con, Label intel, Label wis, Label cha, ListBox skill, ListBox tool, ListBox weapon, ListBox armor)
         {
             List<Race> races = Race.Races();
 
@@ -132,6 +132,33 @@ namespace CS_StatMaker
                 intel.Text = race.RacialBonusStats.Intelligence.ToString();
                 wis.Text = race.RacialBonusStats.Wisdom.ToString();
                 cha.Text = race.RacialBonusStats.Charisma.ToString();
+                List<string> skills = new List<string>();
+                List<string> tools = new List<string>();
+                List<string> weapons = new List<string>();
+                List<string> armors = new List<string>();
+                //string stat = race.RacialProficency.Where(s => s.RelativeStat.Equals(1)).FirstOrDefault().ToString();
+                foreach (Proficiency prof in race.RacialProficency)
+                {
+                    switch (prof.Type)
+                    {
+                        case "Skill":
+                            skills.Add(prof.Name + " (" + prof.RelativeStat.ToString() + ")");
+                            break;
+                        case "Tool":
+                            tools.Add(prof.Name + " (" + prof.RelativeStat.ToString() + ")");
+                            break;
+                        case "Weapon":
+                            weapons.Add(prof.Name + " (" + prof.RelativeStat.ToString() + ")");
+                            break;
+                        case "Armor":
+                            armors.Add(prof.Name + " (" + prof.RelativeStat.ToString() + ")");
+                            break;
+                    }                    
+                }
+                skill.DataSource = skills;
+                tool.DataSource = tools;
+                weapon.DataSource = weapons;
+                armor.DataSource = armors;
             }
         }
     }
