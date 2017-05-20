@@ -45,7 +45,7 @@ namespace CS_StatMaker
 
         public Stats RacialBonusStats { get; set; }
 
-        public List<Proficiency> SProficency { get; set; }
+        public List<Proficiency> RacialProficency { get; set; }
         
 
         public Race(string eName, Stats eBonusStats, List<Proficiency> eSkillProficiency)
@@ -56,16 +56,19 @@ namespace CS_StatMaker
             {
                 skill.ProfRating = ProficiencyRating.Yes;
             }
-            SProficency = eSkillProficiency;
+            RacialProficency = eSkillProficiency;
         }
 
         public static List<Race> Races()
         {
-            List<Proficiency> skillProficiency = new SkillProficiency().SkillProficiencies;
+            List<Proficiency> skillProficiency = new Proficiencies().SkillProficiencies;
+            List<Proficiency> toolProficiency = new Proficiencies().ToolProficiencies;
+            List<Proficiency> weaponProficiency = new Proficiencies().WeaponProficiencies;
+            List<Proficiency> armorProficiency = new Proficiencies().ArmorProficiencies;
 
             List<Race> races = new List<Race>
             {
-                new Race("Hill Dwarf", new Stats { Constitution = 2, Wisdom = 1 }, new List<Proficiency>{ skillProficiency[0] }),                
+                new Race("Hill Dwarf", new Stats { Constitution = 2, Wisdom = 1 }, new List<Proficiency>{ weaponProficiency[0], weaponProficiency[1], weaponProficiency[2], weaponProficiency[3], toolProficiency[1], skillProficiency[5] }),
                 new Race("Mountain Dwarf", new Stats { Constitution = 2, Strength = 2 }, new List<Proficiency>{ }),
                 new Race("High Elf", new Stats { Dexterity = 2, Intelligence = 1 }, new List<Proficiency>{ }),
                 new Race("Wood Elf", new Stats { Dexterity = 2, Wisdom = 1 }, new List<Proficiency>{ }),
@@ -107,8 +110,8 @@ namespace CS_StatMaker
         Yes,
         Expertise
     };
-
-    public class SkillProficiency
+    
+    public class Proficiencies
     {
         public List<Proficiency> SkillProficiencies { get; } = new List<Proficiency>
         {
@@ -134,7 +137,25 @@ namespace CS_StatMaker
 
         public List<Proficiency> ToolProficiencies { get; } = new List<Proficiency>
         {
-            new Proficiency("Thieves' Tools",new Stats(){Dexterity = 1},ProficiencyRating.No)
+            new Proficiency("Thieves' Tools",new Stats(){Dexterity = 1},ProficiencyRating.No),
+            new Proficiency("Smith's Tools",new Stats(){Dexterity = 1},ProficiencyRating.No),
+            new Proficiency("Brewer's Supplies",new Stats(){Dexterity = 1},ProficiencyRating.No),
+            new Proficiency("Mason's Tools",new Stats(){Dexterity = 1},ProficiencyRating.No)
+        };
+
+        public List<Proficiency> WeaponProficiencies { get; } = new List<Proficiency>
+        {
+            new Proficiency("Battleaxe",new Stats(){Strength = 1},ProficiencyRating.No),
+            new Proficiency("Handaxe",new Stats(){Strength = 1},ProficiencyRating.No),
+            new Proficiency("Throwing Hammer",new Stats(){Strength = 1},ProficiencyRating.No),
+            new Proficiency("Warhammer",new Stats(){Strength = 1},ProficiencyRating.No)
+        };
+
+        public List<Proficiency> ArmorProficiencies { get; } = new List<Proficiency>
+        {
+            new Proficiency("Heavy Armor",new Stats(){Strength = 1},ProficiencyRating.No),
+            new Proficiency("Medium Armor",new Stats(){Strength = 1},ProficiencyRating.No),
+            new Proficiency("Light Armor",new Stats(){Strength = 1},ProficiencyRating.No)
         };
     }
 }

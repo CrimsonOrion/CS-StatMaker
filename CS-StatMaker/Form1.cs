@@ -191,8 +191,9 @@ namespace CS_StatMaker
 
         private void RaceDropbox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             //RaceClass.RaceStatBonus(RaceDropbox, StrBonus, DexBonus, ConBonus, IntBonus, WisBonus, ChaBonus);
+            Program.SelectRace(RaceDropbox, StrBonus, DexBonus, ConBonus, IntBonus, WisBonus, ChaBonus);
             if (StrBox.Text != "") { StrTotal.Text = (Convert.ToInt16(StrBox.Text) + Convert.ToInt16(StrBonus.Text)).ToString(); } else { StrTotal.Text = "0"; }
             if (DexBox.Text != "") { DexTotal.Text = (Convert.ToInt16(DexBox.Text) + Convert.ToInt16(DexBonus.Text)).ToString(); } else { DexTotal.Text = "0"; }
             if (ConBox.Text != "") { ConTotal.Text = (Convert.ToInt16(ConBox.Text) + Convert.ToInt16(ConBonus.Text)).ToString(); } else { ConTotal.Text = "0"; }

@@ -118,27 +118,21 @@ namespace CS_StatMaker
             }
             raceBox.SelectedIndex = -1;
         }
+
+        public static void SelectRace(ComboBox raceBox, Label str, Label dex, Label con, Label intel, Label wis, Label cha)
+        {
+            List<Race> races = Race.Races();
+
+            Race race = races.Where(f => f.Name.Equals(raceBox.SelectedItem)).FirstOrDefault();
+            if (race != null)
+            {
+                str.Text = race.RacialBonusStats.Strength.ToString();
+                dex.Text = race.RacialBonusStats.Dexterity.ToString();
+                con.Text = race.RacialBonusStats.Constitution.ToString();
+                intel.Text = race.RacialBonusStats.Intelligence.ToString();
+                wis.Text = race.RacialBonusStats.Wisdom.ToString();
+                cha.Text = race.RacialBonusStats.Charisma.ToString();
+            }
+        }
     }
 }
-
-        /*
-         * 
-         * private List<Listing> films { get; set; }
-         *     
-    Load
-
-films = LoadListings();
-foreach (Listing film in films)
-{
-    cmbMovieListingBox.Items.Add(film.GetFilmTitle());
-}
-
-
-When the user selects the item
-
-Listing film = films.Where(f => f.GetFilmTitle().Equals(cmbMovieListingBox.SelectedValue)).FistOrDefault();
-if (film != null)
-{
-    //do work
-}
-         */
