@@ -119,7 +119,7 @@ namespace CS_StatMaker
             raceBox.SelectedIndex = -1;
         }
 
-        public static void SelectRace(ComboBox raceBox, Label str, Label dex, Label con, Label intel, Label wis, Label cha, ListBox skill, ListBox tool, ListBox weapon, ListBox armor)
+        public static void SelectRace(ComboBox raceBox, Label str, Label dex, Label con, Label intel, Label wis, Label cha, Label darkvision, Label languages, ListBox skill, ListBox tool, ListBox weapon, ListBox armor, TextBox traits)
         {
             List<Race> races = Race.Races();
 
@@ -159,6 +159,20 @@ namespace CS_StatMaker
                 tool.DataSource = tools;
                 weapon.DataSource = weapons;
                 armor.DataSource = armors;
+                if (race.Darkvision)
+                { darkvision.Text = "Yes"; }
+                else
+                { darkvision.Text = "No"; }
+                languages.Text = string.Empty;
+                foreach (var language in race.KnownLanguages)
+                {
+                    languages.Text += language.ToString() + "\r\n";
+                }
+                traits.Text = string.Empty;
+                foreach (string traitNote in race.RacialNotes)
+                {
+                    traits.Text += traitNote + "\r\n\r\n";
+                }
             }
         }
     }

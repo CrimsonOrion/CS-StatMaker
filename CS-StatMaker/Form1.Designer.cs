@@ -52,6 +52,14 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ArmorProficencyListbox = new System.Windows.Forms.ListBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.WeaponProficencyListbox = new System.Windows.Forms.ListBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.ToolProficencyListbox = new System.Windows.Forms.ListBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.SkillProficencyListbox = new System.Windows.Forms.ListBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.ChaMod = new System.Windows.Forms.Label();
             this.WisMod = new System.Windows.Forms.Label();
@@ -79,14 +87,12 @@
             this.ConBonus = new System.Windows.Forms.Label();
             this.DexBonus = new System.Windows.Forms.Label();
             this.StrBonus = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.SkillProficencyListbox = new System.Windows.Forms.ListBox();
-            this.ToolProficencyListbox = new System.Windows.Forms.ListBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.ArmorProficencyListbox = new System.Windows.Forms.ListBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.WeaponProficencyListbox = new System.Windows.Forms.ListBox();
-            this.label20 = new System.Windows.Forms.Label();
+            this.RacialTraitTextbox = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.DarkvisionLabel = new System.Windows.Forms.Label();
+            this.LanguagesLabel = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -348,7 +354,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(567, 446);
+            this.tabControl1.Size = new System.Drawing.Size(567, 570);
             this.tabControl1.TabIndex = 42;
             // 
             // tabPage1
@@ -373,16 +379,22 @@
             this.tabPage1.Controls.Add(this.IntBox);
             this.tabPage1.Controls.Add(this.ConBox);
             this.tabPage1.Controls.Add(this.DexBox);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage1.Size = new System.Drawing.Size(559, 413);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(559, 420);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Base Stats";
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.LanguagesLabel);
+            this.tabPage2.Controls.Add(this.label24);
+            this.tabPage2.Controls.Add(this.DarkvisionLabel);
+            this.tabPage2.Controls.Add(this.label22);
+            this.tabPage2.Controls.Add(this.label21);
+            this.tabPage2.Controls.Add(this.RacialTraitTextbox);
             this.tabPage2.Controls.Add(this.ArmorProficencyListbox);
             this.tabPage2.Controls.Add(this.label19);
             this.tabPage2.Controls.Add(this.WeaponProficencyListbox);
@@ -422,10 +434,98 @@
             this.tabPage2.Controls.Add(this.RaceDropbox);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(559, 420);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(559, 544);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Race";
+            // 
+            // ArmorProficencyListbox
+            // 
+            this.ArmorProficencyListbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ArmorProficencyListbox.FormattingEnabled = true;
+            this.ArmorProficencyListbox.HorizontalScrollbar = true;
+            this.ArmorProficencyListbox.ItemHeight = 16;
+            this.ArmorProficencyListbox.Location = new System.Drawing.Point(403, 222);
+            this.ArmorProficencyListbox.Name = "ArmorProficencyListbox";
+            this.ArmorProficencyListbox.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.ArmorProficencyListbox.Size = new System.Drawing.Size(150, 148);
+            this.ArmorProficencyListbox.TabIndex = 77;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.label19.Location = new System.Drawing.Point(400, 201);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(139, 18);
+            this.label19.TabIndex = 76;
+            this.label19.Text = "Armor Proficency";
+            // 
+            // WeaponProficencyListbox
+            // 
+            this.WeaponProficencyListbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.WeaponProficencyListbox.FormattingEnabled = true;
+            this.WeaponProficencyListbox.HorizontalScrollbar = true;
+            this.WeaponProficencyListbox.ItemHeight = 16;
+            this.WeaponProficencyListbox.Location = new System.Drawing.Point(232, 222);
+            this.WeaponProficencyListbox.Name = "WeaponProficencyListbox";
+            this.WeaponProficencyListbox.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.WeaponProficencyListbox.Size = new System.Drawing.Size(150, 148);
+            this.WeaponProficencyListbox.TabIndex = 75;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.label20.Location = new System.Drawing.Point(229, 201);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(155, 18);
+            this.label20.TabIndex = 74;
+            this.label20.Text = "Weapon Proficency";
+            // 
+            // ToolProficencyListbox
+            // 
+            this.ToolProficencyListbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ToolProficencyListbox.FormattingEnabled = true;
+            this.ToolProficencyListbox.HorizontalScrollbar = true;
+            this.ToolProficencyListbox.ItemHeight = 16;
+            this.ToolProficencyListbox.Location = new System.Drawing.Point(403, 37);
+            this.ToolProficencyListbox.Name = "ToolProficencyListbox";
+            this.ToolProficencyListbox.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.ToolProficencyListbox.Size = new System.Drawing.Size(150, 148);
+            this.ToolProficencyListbox.TabIndex = 73;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.label18.Location = new System.Drawing.Point(400, 16);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(127, 18);
+            this.label18.TabIndex = 72;
+            this.label18.Text = "Tool Proficency";
+            // 
+            // SkillProficencyListbox
+            // 
+            this.SkillProficencyListbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.SkillProficencyListbox.FormattingEnabled = true;
+            this.SkillProficencyListbox.HorizontalScrollbar = true;
+            this.SkillProficencyListbox.ItemHeight = 16;
+            this.SkillProficencyListbox.Location = new System.Drawing.Point(232, 37);
+            this.SkillProficencyListbox.Name = "SkillProficencyListbox";
+            this.SkillProficencyListbox.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.SkillProficencyListbox.Size = new System.Drawing.Size(150, 148);
+            this.SkillProficencyListbox.TabIndex = 71;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.label17.Location = new System.Drawing.Point(229, 16);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(125, 18);
+            this.label17.TabIndex = 70;
+            this.label17.Text = "Skill Proficency";
             // 
             // label8
             // 
@@ -697,99 +797,73 @@
             this.StrBonus.TabIndex = 42;
             this.StrBonus.Text = "0";
             // 
-            // label17
+            // RacialTraitTextbox
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.label17.Location = new System.Drawing.Point(229, 16);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(125, 18);
-            this.label17.TabIndex = 70;
-            this.label17.Text = "Skill Proficency";
+            this.RacialTraitTextbox.BackColor = System.Drawing.SystemColors.Control;
+            this.RacialTraitTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RacialTraitTextbox.Location = new System.Drawing.Point(6, 422);
+            this.RacialTraitTextbox.Multiline = true;
+            this.RacialTraitTextbox.Name = "RacialTraitTextbox";
+            this.RacialTraitTextbox.ReadOnly = true;
+            this.RacialTraitTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.RacialTraitTextbox.Size = new System.Drawing.Size(547, 116);
+            this.RacialTraitTextbox.TabIndex = 78;
             // 
-            // SkillProficencyListbox
+            // label21
             // 
-            this.SkillProficencyListbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.SkillProficencyListbox.FormattingEnabled = true;
-            this.SkillProficencyListbox.HorizontalScrollbar = true;
-            this.SkillProficencyListbox.ItemHeight = 16;
-            this.SkillProficencyListbox.Location = new System.Drawing.Point(232, 37);
-            this.SkillProficencyListbox.Name = "SkillProficencyListbox";
-            this.SkillProficencyListbox.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.SkillProficencyListbox.Size = new System.Drawing.Size(150, 148);
-            this.SkillProficencyListbox.TabIndex = 71;
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.label21.Location = new System.Drawing.Point(3, 401);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(190, 18);
+            this.label21.TabIndex = 79;
+            this.label21.Text = "Racial Traits and Notes:";
             // 
-            // ToolProficencyListbox
+            // label22
             // 
-            this.ToolProficencyListbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ToolProficencyListbox.FormattingEnabled = true;
-            this.ToolProficencyListbox.HorizontalScrollbar = true;
-            this.ToolProficencyListbox.ItemHeight = 16;
-            this.ToolProficencyListbox.Location = new System.Drawing.Point(403, 37);
-            this.ToolProficencyListbox.Name = "ToolProficencyListbox";
-            this.ToolProficencyListbox.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.ToolProficencyListbox.Size = new System.Drawing.Size(150, 148);
-            this.ToolProficencyListbox.TabIndex = 73;
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.label22.Location = new System.Drawing.Point(3, 280);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(93, 18);
+            this.label22.TabIndex = 80;
+            this.label22.Text = "Darkvision:";
             // 
-            // label18
+            // DarkvisionLabel
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.label18.Location = new System.Drawing.Point(400, 16);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(127, 18);
-            this.label18.TabIndex = 72;
-            this.label18.Text = "Tool Proficency";
+            this.DarkvisionLabel.AutoSize = true;
+            this.DarkvisionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DarkvisionLabel.Location = new System.Drawing.Point(102, 282);
+            this.DarkvisionLabel.Name = "DarkvisionLabel";
+            this.DarkvisionLabel.Size = new System.Drawing.Size(29, 16);
+            this.DarkvisionLabel.TabIndex = 81;
+            this.DarkvisionLabel.Text = "???";
             // 
-            // ArmorProficencyListbox
+            // LanguagesLabel
             // 
-            this.ArmorProficencyListbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ArmorProficencyListbox.FormattingEnabled = true;
-            this.ArmorProficencyListbox.HorizontalScrollbar = true;
-            this.ArmorProficencyListbox.ItemHeight = 16;
-            this.ArmorProficencyListbox.Location = new System.Drawing.Point(403, 222);
-            this.ArmorProficencyListbox.Name = "ArmorProficencyListbox";
-            this.ArmorProficencyListbox.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.ArmorProficencyListbox.Size = new System.Drawing.Size(150, 148);
-            this.ArmorProficencyListbox.TabIndex = 77;
+            this.LanguagesLabel.AutoSize = true;
+            this.LanguagesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LanguagesLabel.Location = new System.Drawing.Point(102, 308);
+            this.LanguagesLabel.Name = "LanguagesLabel";
+            this.LanguagesLabel.Size = new System.Drawing.Size(29, 16);
+            this.LanguagesLabel.TabIndex = 83;
+            this.LanguagesLabel.Text = "???";
             // 
-            // label19
+            // label24
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.label19.Location = new System.Drawing.Point(400, 201);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(139, 18);
-            this.label19.TabIndex = 76;
-            this.label19.Text = "Armor Proficency";
-            // 
-            // WeaponProficencyListbox
-            // 
-            this.WeaponProficencyListbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.WeaponProficencyListbox.FormattingEnabled = true;
-            this.WeaponProficencyListbox.HorizontalScrollbar = true;
-            this.WeaponProficencyListbox.ItemHeight = 16;
-            this.WeaponProficencyListbox.Location = new System.Drawing.Point(232, 222);
-            this.WeaponProficencyListbox.Name = "WeaponProficencyListbox";
-            this.WeaponProficencyListbox.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.WeaponProficencyListbox.Size = new System.Drawing.Size(150, 148);
-            this.WeaponProficencyListbox.TabIndex = 75;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.label20.Location = new System.Drawing.Point(229, 201);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(155, 18);
-            this.label20.TabIndex = 74;
-            this.label20.Text = "Weapon Proficency";
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.label24.Location = new System.Drawing.Point(3, 306);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(94, 18);
+            this.label24.TabIndex = 82;
+            this.label24.Text = "Languages:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 470);
+            this.ClientSize = new System.Drawing.Size(593, 594);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -864,6 +938,12 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ListBox SkillProficencyListbox;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox RacialTraitTextbox;
+        private System.Windows.Forms.Label DarkvisionLabel;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label LanguagesLabel;
+        private System.Windows.Forms.Label label24;
     }
 }
 
