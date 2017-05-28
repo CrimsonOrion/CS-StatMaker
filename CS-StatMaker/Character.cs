@@ -16,6 +16,10 @@ namespace CS_StatMaker
         // Race
         public Race MyRace { get; set; }
 
+        public Character()
+        {
+        }
+
         public Character(string eName, Stats eBaseStats, Race eMyRace)
         {
             Name = eName;

@@ -20,21 +20,6 @@ namespace CS_StatMaker
         }
     }
 
-    public enum ProficiencyRating
-    {
-        No, JackOfAllTrades, Yes, Expertise
-    };
-
-    public enum Languages
-    {
-        Common, Dwarvish, Elvish, Giant, Gnomish, Goblin, Halfling, Orc, Abyssal, Celestial, Draconic, DeepSpeech, Infernal, Primordial, Sylvan, Undercommon, ADDITIONAL
-    }
-
-    public enum RelativeStat
-    {
-        STR, DEX, CON, INT, WIS, CHA, Finesse, None
-    }
-
     public class Proficiencies
     {
         public List<Proficiency> SkillProficiencies { get; } = new List<Proficiency>
@@ -56,7 +41,8 @@ namespace CS_StatMaker
             new Proficiency("Skill",14,"Religion",RelativeStat.INT,ProficiencyRating.No),
             new Proficiency("Skill",15,"Sleight of Hand",RelativeStat.DEX,ProficiencyRating.No),
             new Proficiency("Skill",16,"Stealth",RelativeStat.DEX,ProficiencyRating.No),
-            new Proficiency("Skill",17,"Survival",RelativeStat.WIS,ProficiencyRating.No)
+            new Proficiency("Skill",17,"Survival",RelativeStat.WIS,ProficiencyRating.No),
+            new Proficiency("Skill",18,"Additional Skill",RelativeStat.None,ProficiencyRating.No)
         };
 
         public List<Proficiency> ToolProficiencies { get; } = new List<Proficiency>

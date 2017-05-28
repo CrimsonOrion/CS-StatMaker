@@ -17,7 +17,7 @@ namespace CS_StatMaker
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormMain());
         }
 
         public static string RollForStats(Random rnd)
@@ -47,11 +47,51 @@ namespace CS_StatMaker
             return topRolls.ToString();
         }
 
-        public static string ApplyMod(TextBox tBox, Label lbl = null)
+        public static void AddToStat(TextBox tbox, Label pointsRemain)
+        {
+            int value = Convert.ToInt32(tbox.Text);
+            int remain = Convert.ToInt32(pointsRemain.Text);
+            if (value != 15 && ((value <= 13 & remain > 0) || (value > 13 & remain > 1)))
+            {
+                value += 1;
+                if (value <= 13)
+                {
+                    remain -= 1;
+                }
+                else
+                {
+                    remain -= 2;
+                }
+                tbox.Text = value.ToString();
+                pointsRemain.Text = remain.ToString();
+            }            
+        }
+
+        public static void SubtractFromStat(TextBox tbox, Label pointsRemain)
+        {
+            int value = Convert.ToInt32(tbox.Text);
+            int remain = Convert.ToInt32(pointsRemain.Text);
+            if (value != 8)
+            {
+                value -= 1;
+                if (value < 13)
+                {
+                    remain += 1;
+                }
+                else
+                {
+                    remain += 2;
+                }                
+                tbox.Text = value.ToString();
+                pointsRemain.Text = remain.ToString();
+            }            
+        }        
+
+        public static string ApplyMod(string tBox, Label lbl = null)
         {
             int modifierBonus = 0;
             int stat = 0;
-            if (tBox != null) { stat = Convert.ToInt32(tBox.Text); } else { stat = Convert.ToInt32(lbl.Text); }
+            if (tBox != null) { stat = Convert.ToInt32(tBox); } else { stat = Convert.ToInt32(lbl.Text); }
             switch (stat)
             {
                 case 6:
@@ -109,6 +149,31 @@ namespace CS_StatMaker
             return modifierBonus.ToString();
         }
 
+        public static void ApplyBonusStat(object sender, Label bonusStat, Label statTotal, Label statMod)
+        {
+            Label statLabel = (Label)sender;
+            int bonusStatLabel = Convert.ToInt32(bonusStat.Text);
+            int statBonusLabel = Convert.ToInt32(statLabel.Text);
+            int statTotalLabel = Convert.ToInt32(statTotal.Text);
+            if (bonusStatLabel != 0 && statBonusLabel == 0 )
+            {
+                bonusStatLabel -= 1;
+                statBonusLabel += 1;
+                statTotalLabel += 1;
+            }
+            else if (statBonusLabel == 1)
+            {
+                bonusStatLabel += 1;
+                statBonusLabel -= 1;
+                statTotalLabel -= 1;
+            }
+
+            statLabel.Text = statBonusLabel.ToString();
+            bonusStat.Text = bonusStatLabel.ToString();
+            statTotal.Text = statTotalLabel.ToString();
+            statMod.Text = Program.ApplyMod(statTotal.Text);
+        }
+
         public static void AddRaces(ComboBox raceBox)
         {
             List<Race> races = Race.Races();
@@ -119,7 +184,7 @@ namespace CS_StatMaker
             raceBox.SelectedIndex = -1;
         }
 
-        public static void SelectRace(ComboBox raceBox, Label str, Label dex, Label con, Label intel, Label wis, Label cha, Label darkvision, Label languages, ListBox skill, ListBox tool, ListBox weapon, ListBox armor, TextBox traits)
+        public static void SelectRace(ComboBox raceBox, Label str, Label dex, Label con, Label intel, Label wis, Label cha, Label add, Label darkvision, Label languages, ListBox skill, ListBox tool, ListBox weapon, ListBox armor, TextBox traits)
         {
             List<Race> races = Race.Races();
 
@@ -132,6 +197,7 @@ namespace CS_StatMaker
                 intel.Text = race.RacialBonusStats.Intelligence.ToString();
                 wis.Text = race.RacialBonusStats.Wisdom.ToString();
                 cha.Text = race.RacialBonusStats.Charisma.ToString();
+                add.Text = race.RacialBonusStats.Additional.ToString();
                 List<string> skills = new List<string>();
                 List<string> tools = new List<string>();
                 List<string> weapons = new List<string>();
@@ -155,10 +221,12 @@ namespace CS_StatMaker
                             break;
                     }                    
                 }
+
                 skill.DataSource = skills;
                 tool.DataSource = tools;
                 weapon.DataSource = weapons;
                 armor.DataSource = armors;
+
                 if (race.Darkvision)
                 { darkvision.Text = "Yes"; }
                 else
@@ -174,6 +242,45 @@ namespace CS_StatMaker
                     traits.Text += traitNote + "\r\n\r\n";
                 }
             }
+        }
+
+        public static DialogResult ShowInputDialog(ref string input)
+        {
+            System.Drawing.Size size = new System.Drawing.Size(200, 70);
+            Form inputBox = new Form();
+
+            inputBox.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            inputBox.ClientSize = size;
+            inputBox.Text = "Name";
+
+            System.Windows.Forms.TextBox textBox = new TextBox();
+            textBox.Size = new System.Drawing.Size(size.Width - 10, 23);
+            textBox.Location = new System.Drawing.Point(5, 5);
+            textBox.Text = input;
+            inputBox.Controls.Add(textBox);
+
+            Button okButton = new Button();
+            okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            okButton.Name = "okButton";
+            okButton.Size = new System.Drawing.Size(75, 23);
+            okButton.Text = "&OK";
+            okButton.Location = new System.Drawing.Point(size.Width - 80 - 80, 39);
+            inputBox.Controls.Add(okButton);
+
+            Button cancelButton = new Button();
+            cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            cancelButton.Name = "cancelButton";
+            cancelButton.Size = new System.Drawing.Size(75, 23);
+            cancelButton.Text = "&Cancel";
+            cancelButton.Location = new System.Drawing.Point(size.Width - 80, 39);
+            inputBox.Controls.Add(cancelButton);
+
+            inputBox.AcceptButton = okButton;
+            inputBox.CancelButton = cancelButton;
+
+            DialogResult result = inputBox.ShowDialog();
+            input = textBox.Text;
+            return result;
         }
     }
 }
