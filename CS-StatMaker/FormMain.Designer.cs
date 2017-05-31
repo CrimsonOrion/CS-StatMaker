@@ -51,6 +51,8 @@
             this.RadioSet = new System.Windows.Forms.RadioButton();
             this.RadioRoll = new System.Windows.Forms.RadioButton();
             this.RaceTab = new System.Windows.Forms.TabPage();
+            this.BonusStat = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.LanguagesLabel = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.DarkvisionLabel = new System.Windows.Forms.Label();
@@ -92,8 +94,6 @@
             this.ConBonus = new System.Windows.Forms.Label();
             this.DexBonus = new System.Windows.Forms.Label();
             this.StrBonus = new System.Windows.Forms.Label();
-            this.BonusStat = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.BaseStatTab.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -182,6 +182,7 @@
             this.DexBox.ReadOnly = true;
             this.DexBox.Size = new System.Drawing.Size(30, 30);
             this.DexBox.TabIndex = 1;
+            this.DexBox.Text = "8";
             this.DexBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.DexBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DieBox_KeyUp);
             // 
@@ -196,6 +197,7 @@
             this.ConBox.ReadOnly = true;
             this.ConBox.Size = new System.Drawing.Size(30, 30);
             this.ConBox.TabIndex = 2;
+            this.ConBox.Text = "8";
             this.ConBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ConBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DieBox_KeyUp);
             // 
@@ -210,6 +212,7 @@
             this.IntBox.ReadOnly = true;
             this.IntBox.Size = new System.Drawing.Size(30, 30);
             this.IntBox.TabIndex = 3;
+            this.IntBox.Text = "8";
             this.IntBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IntBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DieBox_KeyUp);
             // 
@@ -224,6 +227,7 @@
             this.ChaBox.ReadOnly = true;
             this.ChaBox.Size = new System.Drawing.Size(30, 30);
             this.ChaBox.TabIndex = 5;
+            this.ChaBox.Text = "8";
             this.ChaBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ChaBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DieBox_KeyUp);
             // 
@@ -238,6 +242,7 @@
             this.WisBox.ReadOnly = true;
             this.WisBox.Size = new System.Drawing.Size(30, 30);
             this.WisBox.TabIndex = 4;
+            this.WisBox.Text = "8";
             this.WisBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.WisBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DieBox_KeyUp);
             // 
@@ -252,6 +257,7 @@
             this.StrBox.ReadOnly = true;
             this.StrBox.Size = new System.Drawing.Size(30, 30);
             this.StrBox.TabIndex = 0;
+            this.StrBox.Text = "8";
             this.StrBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.StrBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DieBox_KeyUp);
             // 
@@ -420,6 +426,26 @@
             this.RaceTab.TabIndex = 1;
             this.RaceTab.Text = "Race";
             this.RaceTab.Enter += new System.EventHandler(this.RaceTab_Enter);
+            // 
+            // BonusStat
+            // 
+            this.BonusStat.AutoSize = true;
+            this.BonusStat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BonusStat.Location = new System.Drawing.Point(73, 271);
+            this.BonusStat.Name = "BonusStat";
+            this.BonusStat.Size = new System.Drawing.Size(15, 16);
+            this.BonusStat.TabIndex = 85;
+            this.BonusStat.Text = "0";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.label26.Location = new System.Drawing.Point(6, 269);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(61, 18);
+            this.label26.TabIndex = 84;
+            this.label26.Text = "Bonus:";
             // 
             // LanguagesLabel
             // 
@@ -846,26 +872,6 @@
             this.StrBonus.TabIndex = 42;
             this.StrBonus.Text = "0";
             this.StrBonus.Click += new System.EventHandler(this.Bonus_Click);
-            // 
-            // BonusStat
-            // 
-            this.BonusStat.AutoSize = true;
-            this.BonusStat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BonusStat.Location = new System.Drawing.Point(73, 271);
-            this.BonusStat.Name = "BonusStat";
-            this.BonusStat.Size = new System.Drawing.Size(15, 16);
-            this.BonusStat.TabIndex = 85;
-            this.BonusStat.Text = "0";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.label26.Location = new System.Drawing.Point(6, 269);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(61, 18);
-            this.label26.TabIndex = 84;
-            this.label26.Text = "Bonus:";
             // 
             // FormMain
             // 

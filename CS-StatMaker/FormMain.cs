@@ -13,8 +13,8 @@ namespace CS_StatMaker
 {
     public partial class FormMain : Form
     {
-        TextBox sourceTextbox = null;      
-        //bool alreadyRolled = false;
+        TextBox sourceTextbox = null;
+        //bool alreadyRolled = false;       
         public FormMain()
         {
             InitializeComponent();            
@@ -230,7 +230,16 @@ namespace CS_StatMaker
 
         private void RaceTab_Enter(object sender, EventArgs e)
         {
-            RaceDropbox_SelectedIndexChanged(RaceDropbox, e);            
+            List<Label> statTotal = new List<Label> { StrTotal, DexTotal, ConTotal, IntTotal, WisTotal, ChaTotal };
+            List<TextBox> statBox = new List<TextBox> { StrBox, DexBox, ConBox, IntBox, WisBox, ChaBox };
+            List<Label> statBonus = new List<Label> { StrBonus, DexBonus, ConBonus, IntBonus, WisBonus, ChaBonus };
+            List<Label> statMod = new List<Label> { StrMod, DexMod, ConMod, IntMod, WisMod, ChaMod };
+
+            for (int index = 0; index < statTotal.Count; index++)
+            {
+                statTotal[index].Text = (Convert.ToInt16(statBox[index].Text) + Convert.ToInt16(statBonus[index].Text)).ToString();
+                statMod[index].Text = Program.ApplyMod(statTotal[index].Text);
+            }            
         }
 
         private void Bonus_Click(object sender, EventArgs e)
